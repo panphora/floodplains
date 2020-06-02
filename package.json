@@ -1,0 +1,11 @@
+{
+  "name": "floodplains",
+  "version": "0.5.0",
+  "description": "A small event library",
+  "main": "floodplains.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "panphora",
+  "license": "MIT"
+}
