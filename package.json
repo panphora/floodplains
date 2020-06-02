@@ -2,10 +2,35 @@
   "name": "floodplains",
   "version": "0.5.0",
   "description": "A small event library",
-  "main": "floodplains.js",
+  "source": "src/floodplains.js",
+  "main": "dist/floodplains.js",
+  "module": "dist/floodplains.module.js",
+  "unpkg": "dist/floodplains.umd.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "http-server": "http-server -c-1",
+    "microbundle-watch": "microbundle watch",
+    "build": "microbundle",
+    "dev": "concurrently 'npm:http-server' 'npm:microbundle-watch' --kill-others"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panphora/floodplains.git"
+  },
+  "keywords": [
+    "event",
+    "library"
+  ],
   "author": "panphora",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/panphora/floodplains/issues"
+  },
+  "homepage": "https://github.com/panphora/floodplains#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3",
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "microbundle": "^0.12.0"
+  }
 }
