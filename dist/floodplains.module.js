@@ -1,2 +1,2 @@
-var t={trigger:function(t,e){var n=new CustomEvent(t,{detail:e});document.dispatchEvent(n)},listen:function(t,e){document.addEventListener(t,function(t){e(t.detail)},!1)}};export default t;
+var e={emit:function(e,a){var n=new CustomEvent("floodplains-event",{detail:{name:e,value:a}});document.dispatchEvent(n)},on:function(e,a){document.addEventListener("floodplains-event",function(n){Array.isArray(e)?e.includes(n.detail.name)&&a({name:n.detail.name,value:n.detail.value}):e===n.detail.name&&a({name:e,value:n.detail.value})},!1)}};export default e;
 //# sourceMappingURL=floodplains.module.js.map
