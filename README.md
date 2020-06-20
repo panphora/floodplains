@@ -60,6 +60,8 @@ floodplains.on("some-event", function (val) {
 
 The `on` method actively listens for an event with a particular name (e.g. `"some-event"`) and calls its callback whenever an event with that name is emitted.
 
+Special `"*"` event name will listen to _all_ events.
+
 ## License
 
 MIT
