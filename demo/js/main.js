@@ -19,3 +19,5 @@ floodplains.on(["one-more-event"], function (val) {
 floodplains.emit("some-event", "hello, world!");
 floodplains.emit("another-event", "kittens!");
 floodplains.emit("one-more-event", {data: {person: {name: "david"}}});
+
+window.floodplains = floodplains;
