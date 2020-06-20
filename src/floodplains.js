@@ -1,5 +1,7 @@
 let callbacksLookup = {};
 
+// gets the array of functions under the passed-in 
+// event name and calls each of them
 function emit (name, value) {
   let callbacks = callbacksLookup[name] || [];
 
@@ -8,6 +10,8 @@ function emit (name, value) {
   }
 }
 
+// adds event watchers to `callbacksLookup` object 
+// as an array of functions namespaced under the event name
 function on (name, cb) {
   let eventNames = Array.isArray(name) ? name : [name];
 
