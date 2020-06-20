@@ -17,7 +17,8 @@ npm install floodplains
 ## How to Use
 
 ```js
-import floodplains from "floodplains";
+import Floodplains from "floodplains";
+const floodplains = new Floodplains;
 
 floodplains.on("some-event", function (val) {
   console.log("some-event", val);

@@ -1,37 +1,37 @@
-let callbacksLookup = {};
-
-// gets the array of functions under the passed-in 
-// event name and calls each of them
-function emit (name, value) {
-  let callbacks = callbacksLookup[name] || [];
-  let wildcardCallbacks = callbacksLookup["*"] || [];
-
-  for (let callback of callbacks) {
-    callback({name, value});
-  }
-
-  for (let wildcardCallback of wildcardCallbacks) {
-    wildcardCallback({name, value});
-  }
+function Floodplains () {
+  this.callbacksLookup = {};
 }
 
-// adds event watchers to `callbacksLookup` object 
-// as an array of functions namespaced under the event name
-function on (name, cb) {
-  let eventNames = Array.isArray(name) ? name : [name];
+Floodplains.prototype = {
+  // gets the array of functions under the passed-in 
+  // event name and calls each of them
+  emit: function (name, value) {
+    let callbacks = this.callbacksLookup[name] || [];
+    let wildcardCallbacks = this.callbacksLookup["*"] || [];
 
-  for (let eventName of eventNames) {
-    if (!callbacksLookup[eventName]) {
-      callbacksLookup[eventName] = [];
+    for (let callback of callbacks) {
+      callback({name, value});
     }
 
-    callbacksLookup[eventName].push(cb);
+    for (let wildcardCallback of wildcardCallbacks) {
+      wildcardCallback({name, value});
+    }
+  },
+
+  // adds event watchers to `callbacksLookup` object 
+  // as an array of functions namespaced under the event name
+  on: function (name, cb) {
+    let eventNames = Array.isArray(name) ? name : [name];
+
+    for (let eventName of eventNames) {
+      if (!this.callbacksLookup[eventName]) {
+        this.callbacksLookup[eventName] = [];
+      }
+
+      this.callbacksLookup[eventName].push(cb);
+    }
   }
+
 }
 
-const floodplains = {
-  emit, 
-  on
-}
-
-export default floodplains;
+export default Floodplains;

@@ -1,4 +1,5 @@
-import floodplains from "../../dist/floodplains.modern.js";
+import Floodplains from "../../dist/floodplains.modern.js";
+const floodplains = new Floodplains;
 
 floodplains.on("some-event", function (val) {
   console.log("some-event", val);
@@ -20,4 +21,5 @@ floodplains.emit("some-event", "hello, world!");
 floodplains.emit("another-event", "kittens!");
 floodplains.emit("one-more-event", {name: "James"});
 
+window.Floodplains = Floodplains;
 window.floodplains = floodplains;

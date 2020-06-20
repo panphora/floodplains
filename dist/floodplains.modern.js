@@ -1,2 +1,2 @@
-let e={};const t={emit:function(t,o){let f=e[t]||[],l=e["*"]||[];for(let e of f)e({name:t,value:o});for(let e of l)e({name:t,value:o})},on:function(t,o){let f=Array.isArray(t)?t:[t];for(let t of f)e[t]||(e[t]=[]),e[t].push(o)}};export default t;
+function o(){this.callbacksLookup={}}o.prototype={emit:function(o,l){let a=this.callbacksLookup[o]||[],t=this.callbacksLookup["*"]||[];for(let t of a)t({name:o,value:l});for(let a of t)a({name:o,value:l})},on:function(o,l){let a=Array.isArray(o)?o:[o];for(let o of a)this.callbacksLookup[o]||(this.callbacksLookup[o]=[]),this.callbacksLookup[o].push(l)}};export default o;
 //# sourceMappingURL=floodplains.modern.js.map
