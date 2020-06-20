@@ -28,11 +28,16 @@ floodplains.on("another-event", function (val) {
 });
 
 floodplains.on(["some-event", "another-event"], function (val) {
-  console.log("both events:", val);
+  console.log("two events:", val);
+});
+
+floodplains.on("*", function (val) {
+  console.log("all events:", val);
 });
 
 floodplains.emit("some-event", "hello, world!");
 floodplains.emit("another-event", "kittens!");
+floodplains.emit("one-more-event", {name: "James"});
 ```
 
 ## How it Works

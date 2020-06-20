@@ -1,2 +1,2 @@
-let t={};const e={emit:function(e,o){let f=t[e]||[];for(let t of f)t({name:e,value:o})},on:function(e,o){let f=Array.isArray(e)?e:[e];for(let e of f)t[e]||(t[e]=[]),t[e].push(o)}};export default e;
+let e={};const t={emit:function(t,o){let f=e[t]||[],l=e["*"]||[];for(let e of f)e({name:t,value:o});for(let e of l)e({name:t,value:o})},on:function(t,o){let f=Array.isArray(t)?t:[t];for(let t of f)e[t]||(e[t]=[]),e[t].push(o)}};export default t;
 //# sourceMappingURL=floodplains.modern.js.map

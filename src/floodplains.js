@@ -4,9 +4,14 @@ let callbacksLookup = {};
 // event name and calls each of them
 function emit (name, value) {
   let callbacks = callbacksLookup[name] || [];
+  let wildcardCallbacks = callbacksLookup["*"] || [];
 
   for (let callback of callbacks) {
     callback({name, value});
+  }
+
+  for (let wildcardCallback of wildcardCallbacks) {
+    wildcardCallback({name, value});
   }
 }
 
