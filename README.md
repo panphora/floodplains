@@ -6,7 +6,7 @@ Includes `emit` and `on`.
 
 ## Demo
 
-[See It in Action](http://floodplains.davidmiranda.info/demo/)
+[See It in Action](https://floodplains.davidmiranda.info/demo/)
 
 ## Install
 
